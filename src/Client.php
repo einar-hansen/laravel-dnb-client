@@ -2,11 +2,11 @@
 
 namespace E2Consult\DNBApiClient;
 
-use GuzzleHttp\Client as GuzzleClient;
 use GuzzleHttp\HandlerStack;
 use Illuminate\Support\Carbon;
 use Aws\Credentials\Credentials;
 use GuzzleHttp\Handler\CurlHandler;
+use GuzzleHttp\Client as GuzzleClient;
 
 class Client
 {
@@ -62,8 +62,9 @@ class Client
 
     public function getAccountTransactions($accountNumber, $from = null, $to = null)
     {
-        $from   = $from ? Carbon::parse($from)  : now()->subMonth();
-        $to     = $to   ? Carbon::parse($to)    : now();
+        $from = $from ? Carbon::parse($from) : now()->subMonth();
+        $to = $to ? Carbon::parse($to) : now();
+
         return $this->fetch("/transactions/{$accountNumber}", 'GET', [
             'query' => [
                 'fromDate'  => $from->toDateString(),
@@ -75,7 +76,8 @@ class Client
     public function initiatePayment($debitAccountNumber, $creditAccountNumber, $amount, $requestedExecutionDate = null)
     {
         $requestedExecutionDate = Carbon::parse($requestedExecutionDate ?? now());
-        return $this->fetch("/payments", 'POST', [
+
+        return $this->fetch('/payments', 'POST', [
             'body' => json_encode([
                 'debitAccountNumber' =>  $debitAccountNumber,
                 'creditAccountNumber' =>  $creditAccountNumber,
