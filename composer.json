@@ -1,0 +1,22 @@
+{
+    "name": "e2consult/dnb-client",
+    "description": "An API Tool that allows you to easily communicate with DNBs new API using Laravel.",
+    "keywords": ["laravel", "DNB", "DNB api"],
+    "type": "library",
+    "require": {
+        "aws/aws-sdk-php": "^3.91",
+        "guzzlehttp/guzzle": "^6.3"
+    },
+    "license": "MIT",
+    "autoload": {
+        "psr-4": {
+            "E2Consult\\DNBApiClient\\": "src/"
+        }
+    },
+    "authors": [
+        {
+            "name": "Einar-Johan Hansen",
+            "email": "einar@e2consult.no"
+        }
+    ]
+}
