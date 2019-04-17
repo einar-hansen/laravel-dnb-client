@@ -15,7 +15,6 @@ class DNBRequestHandler
     protected $signer;
     protected $token;
 
-
     public function __construct(Credentials $credentials, $api_key, $customerId)
     {
         $this->api_key = $api_key;

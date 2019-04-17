@@ -35,7 +35,6 @@ class JwtToken
         $this->token = null;
     }
 
-
     public function getTokenKey()
     {
         return $this->cache_key;
@@ -48,13 +47,14 @@ class JwtToken
                 $this->token = $this->getFreshToken(true);
             }
         }
+
         return $this->token->jwtToken;
     }
 
     public function getFreshToken($cache = true)
     {
         $signedrequest = $this->signer->signRequest(
-            new Request('GET', config('services.dnb.endpoint') . '/token?customerId=' . json_encode([
+            new Request('GET', config('services.dnb.endpoint').'/token?customerId='.json_encode([
                     'type' => 'SSN',
                     'value' => $this->customerId
                 ]), [
@@ -66,6 +66,7 @@ class JwtToken
             $this->credentials
         );
         $response = (new Client)->send($signedrequest);
+
         return tap(collect(json_decode($response->getBody())->tokenInfo)->first(), function ($token) use ($cache) {
             if ($cache) {
                 Cache::put($this->cache_key, $token, $this->duration);
