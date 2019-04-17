@@ -5,7 +5,9 @@
     "type": "library",
     "require": {
         "aws/aws-sdk-php": "^3.91",
-        "guzzlehttp/guzzle": "^6.3"
+        "guzzlehttp/guzzle": "^6.3",
+        "illuminate/cache": "^5.8",
+        "php" : "^7.2"
     },
     "license": "MIT",
     "autoload": {
