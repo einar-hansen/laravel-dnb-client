@@ -16,7 +16,8 @@
     "authors": [
         {
             "name": "Einar-Johan Hansen",
-            "email": "einar@e2consult.no"
+            "email": "einar@e2consult.no",
+            "homepage": "https://e2consult.no"
         }
     ]
 }
