@@ -6,7 +6,7 @@
 [![Total Downloads](https://img.shields.io/packagist/dt/e2consult/dnb-client.svg)](https://packagist.org/packages/e2consult/dnb-client)
 [![StyleCI](https://styleci.io/repos/181854402/shield)](https://styleci.io/repos/181854402)
 
-E2Consult is a webdevelopment team based in Oslo, Norway. You'll find more information about us [on our website](https://e2consult.no) (in development).
+E2Consult is a webdevelopment team based in Oslo, Norway. You'll find more information about us [on our website](https://e2consult.no).
 
 This package is made to easily communicate with DNBs API using PHP and Laravel, [read more about the API](https://github.com/DNBbank/getting-started).
 
